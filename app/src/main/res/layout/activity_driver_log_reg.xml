@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/logreg"
+    android:layout_height="match_parent"
+    tools:context=".DriverLogReg">
+
+    <TextView
+        android:id="@+id/DriverLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="450dp"
+        android:forceHasOverlappingRendering="true"
+        android:layout_centerHorizontal="true"
+        android:text="Captain Login:"
+        android:textColor="#140703"
+        android:textSize="18dp"
+        />
+
+    <EditText
+        android:id="@+id/Driver_Email"
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="470dp"
+        android:layout_marginLeft="30dp"
+        android:ems="7"
+        android:inputType="textEmailAddress"
+        android:hint="Email address..."
+        android:textSize="18dp" />
+
+    <EditText
+        android:id="@+id/Driver_Password"
+        android:ems="10"
+        android:hint="Password..."
+        android:inputType="textPassword"
+        android:layout_width="362dp"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="520dp"
+        android:layout_marginLeft="30dp"
+        android:textSize="18dp"/>
+
+    <Button
+        android:id="@+id/Driver_Login_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_marginVertical="560dp"
+        android:layout_marginLeft="160dp"
+        />
+
+    <TextView
+        android:id="@+id/AskDriver"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an Account..?"
+        android:textColor="#314AE9"
+        android:textSize="16sp"
+        android:layout_marginVertical="610dp"
+        android:layout_centerHorizontal="true"/>
+    <Button
+        android:id="@+id/DriverRegBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="635dp"
+        android:layout_marginLeft="160dp"
+        android:text="Register"
+        android:textSize="15sp"
+        android:visibility="invisible"/>
+
+
+</RelativeLayout>

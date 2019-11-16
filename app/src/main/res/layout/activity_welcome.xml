@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/welcomeactivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginVertical="50dp"
+        android:text="             Who are you...?   "
+        android:textColor="#5d4643"
+        android:textSize="20dp"
+        android:forceHasOverlappingRendering="true"
+        />
+
+
+
+    <Button
+        android:id="@+id/Welcome_Driver_button"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginVertical="90dp"
+        android:layout_centerHorizontal="true"
+        android:text="CAPTAIN"
+        android:visibility="visible"
+        android:textColor="#140703"
+        android:forceHasOverlappingRendering="true"
+        />
+
+    <Button
+        android:id="@+id/Welcome_Customer_Button"
+        android:layout_width="250dp"
+        android:layout_height="60dp"
+        android:layout_marginVertical="150dp"
+        android:layout_centerHorizontal="true"
+        android:text="CUSTOMER"
+        android:textColor="#140703"
+        android:visibility="visible" />
+
+
+
+</RelativeLayout>
