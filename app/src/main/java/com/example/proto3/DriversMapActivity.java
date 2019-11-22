@@ -54,7 +54,7 @@ public class DriversMapActivity extends FragmentActivity implements OnMapReadyCa
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent=new Intent(DriversMapActivity.this,MainActivity.class);
+                Intent intent=new Intent(DriversMapActivity.this,WelcomeActivity.class);
                 startActivity(intent);
                 finish();
                 return;
