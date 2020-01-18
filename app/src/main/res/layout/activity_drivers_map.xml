@@ -18,16 +18,18 @@
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:layout_marginLeft="90dp"
-        android:background="@color/colorPrimary"
+        android:layout_height="30dp"
+        android:layout_marginLeft="220dp"
+        android:background="#c9ebc9"
         android:text="Settings" />
 
     <Button
         android:id="@+id/DriverLogoutBtn"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
-        android:background="@color/colorPrimary"
+        android:layout_height="30dp"
+        android:forceHasOverlappingRendering="true"
+        android:layout_marginLeft="100dp"
+        android:background="#c9ebc9"
         android:text="Logout" />
 
 
