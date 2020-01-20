@@ -136,10 +136,10 @@ public class DriversMapActivity extends FragmentActivity implements OnMapReadyCa
     }
 
     @Override
-    protected void onStop()
-    {
+    protected void onStop() {
+        super.onStop();
         if (!isloggingout) {
-           disconnectdriver();
+            disconnectdriver();
         }
 
     }
