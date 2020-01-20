@@ -28,7 +28,7 @@
             android:id="@+id/status_driver"
             android:layout_width="95dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="65dp"
+            android:layout_marginLeft="60dp"
             android:background="#f96e07"
             android:text="Online"
             android:textSize="17sp" />
