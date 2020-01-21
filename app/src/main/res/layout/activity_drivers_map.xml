@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <RelativeLayout android:layout_height="match_parent"
     android:layout_width="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -7,9 +8,9 @@
     android:background="@color/colorPrimaryDark">
 
     <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="30dp"
-        android:id="@+id/ll"
         android:background="#f96e07"
         android:visibility="visible">
 
@@ -21,17 +22,19 @@
             android:layout_marginLeft="76dp"
             android:background="#f96e07"
             android:drawableLeft="@drawable/ic_power_settings_new_black_24dp"
-            android:forceHasOverlappingRendering="true"
             android:text="Logout" />
 
         <Switch
             android:id="@+id/status_driver"
-            android:layout_width="95dp"
+            android:layout_width="98dp"
             android:layout_height="30dp"
             android:layout_marginLeft="60dp"
             android:background="#f96e07"
             android:text="Online"
             android:textSize="17sp" />
+
+
+
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>
@@ -40,16 +43,16 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="700dp"
         android:layout_marginTop="0dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="0dp"
         android:layout_below="@+id/ll"
         tools:context=".DriversMapActivity" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
-        android:layout_height="30dp"
-        android:layout_marginTop="700dp"
+        android:layout_height="132dp"
+        android:layout_below="@+id/map"
         android:background="#f96e07"
         android:visibility="visible" />
 
