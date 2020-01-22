@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "18857731445",
-    "firebase_url": "https://proto3-bd535.firebaseio.com",
-    "project_id": "proto3-bd535",
-    "storage_bucket": "proto3-bd535.appspot.com"
+    "project_number": "1007585015415",
+    "firebase_url": "https://riwimifirbase.firebaseio.com",
+    "project_id": "riwimifirbase",
+    "storage_bucket": "riwimifirbase.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:18857731445:android:1d7ebfa2150c9c31589f3c",
+        "mobilesdk_app_id": "1:1007585015415:android:06a333c856d9980599b872",
         "android_client_info": {
           "package_name": "com.example.proto3"
         }
       },
       "oauth_client": [
         {
-          "client_id": "18857731445-89sbusvggf8i9h0k2cut3v5muka8asb9.apps.googleusercontent.com",
+          "client_id": "1007585015415-au6s7ovlc62ueqt5qag60fjqqkdj4ufa.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.proto3",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "18857731445-pp0erekd84ktldfk048i9u8qd55g1l2h.apps.googleusercontent.com",
+          "client_id": "1007585015415-rejishuea27e8l4lql268tm5eabuudg3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDzY83j6q9qMiWGnoycTpIF_Zo3lvgIqEk"
+          "current_key": "AIzaSyAYUerEBQZIB9G4UdbTOG7lDLP0wyOAQCk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "18857731445-pp0erekd84ktldfk048i9u8qd55g1l2h.apps.googleusercontent.com",
+              "client_id": "1007585015415-rejishuea27e8l4lql268tm5eabuudg3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
