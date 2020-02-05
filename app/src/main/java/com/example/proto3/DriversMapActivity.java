@@ -8,19 +8,20 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentActivity;
 
-//import com.firebase.geofire.LocationCallback;
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
 import com.google.android.gms.location.FusedLocationProviderClient;
-import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationCallback;
+import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -28,9 +29,12 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+//import com.firebase.geofire.LocationCallback;
 
 public class DriversMapActivity extends FragmentActivity implements OnMapReadyCallback
          {
@@ -55,7 +59,36 @@ public class DriversMapActivity extends FragmentActivity implements OnMapReadyCa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drivers_map);
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
+
+         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+         bottomNavigationView.setSelectedItemId(R.id.nav_home);
+
+         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+             @Override
+             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                 switch (menuItem.getItemId()) {
+                     case R.id.nav_account:
+                         startActivity(new Intent(getApplicationContext()
+                                 ,Main3Activity.class));
+                         overridePendingTransition(0,0);
+                         return true;
+                     case R.id.nav_menu:
+                         startActivity(new Intent(getApplicationContext()
+                                 ,Main4Activity.class));
+                         overridePendingTransition(0,0);
+                         return true;
+                     case R.id.nav_home:
+                         return true;
+                 }
+                 return false;
+             }
+         });
+
+
+
+
+                 // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
 
@@ -179,7 +212,6 @@ public class DriversMapActivity extends FragmentActivity implements OnMapReadyCa
             //geoFire.removeLocation(userID);
 
         //}
-
 
 
 
