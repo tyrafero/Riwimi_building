@@ -119,10 +119,10 @@ public class DriversMapActivity extends FragmentActivity implements OnMapReadyCa
             mMap.setMinZoomPreference(11);
         }
 
-        LocationCallback locationCallback= new LocationCallback() {
+                    LocationCallback locationCallback= new LocationCallback() {
             @Override
             public void onLocationResult(LocationResult locationResult) {
-                for(Location location : locationResult.getLocations()){
+                    for(Location location : locationResult.getLocations()){
                     if(getApplicationContext()!=null){
 
                         if(!customerId.equals("") && lastLocation!=null && location != null){
