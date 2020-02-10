@@ -9,12 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Main4Activity extends AppCompatActivity {
+public class DrivMenuActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main4);
+        setContentView(R.layout.activity_driv_menu);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
@@ -26,7 +26,7 @@ public class Main4Activity extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.nav_account:
                         startActivity(new Intent(getApplicationContext()
-                                ,Main3Activity.class));
+                                , DrivAccActivity.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.nav_menu:
