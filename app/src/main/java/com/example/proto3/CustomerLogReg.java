@@ -1,8 +1,5 @@
 package com.example.proto3;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,12 +10,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-
-import org.w3c.dom.Text;
 
 public class CustomerLogReg extends AppCompatActivity {
 
@@ -74,11 +72,58 @@ public class CustomerLogReg extends AppCompatActivity {
 
             }
         });
+        Customerlogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                String Email= EmailCustomer.getText().toString();
+                String Password= PasswordCustomer.getText().toString();
+
+                LoginCustomer(Email, Password);
+
+            }
+        });
 
 
 
 
 
+
+
+
+    }
+
+
+
+    private void LoginCustomer(String email, String password)
+    {
+        if(TextUtils.isEmpty(email))
+            Toast.makeText(CustomerLogReg.this, "Please fill up your Email....",Toast.LENGTH_SHORT).show();
+
+        if(TextUtils.isEmpty(password))
+            Toast.makeText(CustomerLogReg.this, "Please fill up your Password....",Toast.LENGTH_SHORT).show();
+        else
+            LoadingBar.setTitle("Customer");
+        LoadingBar.setMessage("Please wait, while system is checking your credentials");
+        LoadingBar.show();
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if(task.isSuccessful()) {
+                            Toast.makeText(CustomerLogReg.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            LoadingBar.dismiss();
+
+                            Intent Customerintent= new Intent(CustomerLogReg.this, CutomersMapActivity.class);
+                            startActivity(Customerintent);
+                        }
+
+                        else {
+                            Toast.makeText(CustomerLogReg.this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
+                            LoadingBar.dismiss();
+                        }
+                    }
+                });
 
 
     }
