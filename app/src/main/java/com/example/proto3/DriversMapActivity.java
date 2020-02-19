@@ -57,12 +57,12 @@ public class DriversMapActivity extends FragmentActivity implements OnMapReadyCa
                  switch (menuItem.getItemId()) {
                      case R.id.nav_account:
                          startActivity(new Intent(getApplicationContext()
-                                 ,Main3Activity.class));
+                                 , DrivAccActivity.class));
                          overridePendingTransition(0,0);
                          return true;
                      case R.id.nav_menu:
                          startActivity(new Intent(getApplicationContext()
-                                 ,Main4Activity.class));
+                                 , DrivMenuActivity.class));
                          overridePendingTransition(0,0);
                          return true;
                      case R.id.nav_home:

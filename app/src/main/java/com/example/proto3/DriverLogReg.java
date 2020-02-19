@@ -12,11 +12,14 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.text.TextUtilsCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+
+import org.w3c.dom.Text;
 
 public class DriverLogReg extends AppCompatActivity {
 
@@ -92,9 +95,11 @@ public class DriverLogReg extends AppCompatActivity {
         if(TextUtils.isEmpty(email))
             Toast.makeText(DriverLogReg.this, "Please fill up your Email....",Toast.LENGTH_SHORT).show();
 
-        if(TextUtils.isEmpty(password))
+        else if(TextUtils.isEmpty(password))
             Toast.makeText(DriverLogReg.this, "Please fill up your Password....",Toast.LENGTH_SHORT).show();
+
         else
+
             LoadingBar.setTitle("Driver");
         LoadingBar.setMessage("Please wait, while system is checking your credentials");
         LoadingBar.show();
@@ -124,7 +129,7 @@ public class DriverLogReg extends AppCompatActivity {
         if(TextUtils.isEmpty(email))
             Toast.makeText(DriverLogReg.this, "Please fill up your Email....",Toast.LENGTH_SHORT).show();
 
-        if(TextUtils.isEmpty(password))
+        else if(TextUtils.isEmpty(password))
             Toast.makeText(DriverLogReg.this, "Please fill up your Password....",Toast.LENGTH_SHORT).show();
         else
             LoadingBar.setTitle("Driver");
