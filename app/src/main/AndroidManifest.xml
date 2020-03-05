@@ -17,7 +17,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CutomersMapActivity"></activity>
+        <activity android:name=".CusAccActivity"></activity>
+        <activity android:name=".CusMenuActivity" />
+        <activity android:name=".CustomersMapActivity" />
         <activity android:name=".DrivAccActivity" />
         <activity android:name=".DrivMenuActivity" />
         <!--

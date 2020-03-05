@@ -114,7 +114,7 @@ public class CustomerLogReg extends AppCompatActivity {
                             Toast.makeText(CustomerLogReg.this, "Login Successful", Toast.LENGTH_SHORT).show();
                             LoadingBar.dismiss();
 
-                            Intent Customerintent= new Intent(CustomerLogReg.this, CutomersMapActivity.class);
+                            Intent Customerintent= new Intent(CustomerLogReg.this, CustomersMapActivity.class);
                             startActivity(Customerintent);
                         }
 

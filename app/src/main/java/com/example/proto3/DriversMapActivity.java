@@ -22,7 +22,6 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
-//import com.firebase.geofire.LocationCallback;
 import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationRequest;
@@ -88,8 +87,6 @@ public class DriversMapActivity extends FragmentActivity implements OnMapReadyCa
         });
 
 
-
-
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
@@ -98,7 +95,8 @@ public class DriversMapActivity extends FragmentActivity implements OnMapReadyCa
 
         mapFragment.getMapAsync(this);
 
-        mWorkingSwitch = (Switch) findViewById(R.id.status_driver);
+        mWorkingSwitch = findViewById(R.id.status_driver);
+
         mWorkingSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -109,7 +107,10 @@ public class DriversMapActivity extends FragmentActivity implements OnMapReadyCa
                 }
             }
 
+
+
         });
+
     }
 
 
@@ -224,6 +225,21 @@ public class DriversMapActivity extends FragmentActivity implements OnMapReadyCa
 
         GeoFire geoFire = new GeoFire(ref);
         geoFire.removeLocation(userId);
+    }
+
+    protected void onStop()
+    {
+        super.onStop();
+
+        if (mFusedLocationClient != null) {
+            mFusedLocationClient.removeLocationUpdates(mLocationCallback);
+        }
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("driversAvailable");
+
+        GeoFire geoFire = new GeoFire(ref);
+        geoFire.removeLocation(userId);
+
     }
 
 
