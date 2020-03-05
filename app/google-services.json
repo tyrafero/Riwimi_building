@@ -5,60 +5,6 @@
     "project_id": "riwimifirbase",
     "storage_bucket": "riwimifirbase.appspot.com"
   },
-  "client": [
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:1007585015415:android:06a333c856d9980599b872",
-        "android_client_info": {
-          "package_name": "com.example.proto3"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1007585015415-8plumkkt378iadore6l6amtds6697j3i.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.proto3",
-            "certificate_hash": "27538376f816ce6d6abb3edcaaac38f957d2cc14"
-          }
-        },
-        {
-          "client_id": "1007585015415-1m1ha1held6c6ej6shn0lf8jos9h83dm.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.proto3",
-            "certificate_hash": "ebf7e77843c0bcd71ae5364a7834b8a9620074b7"
-          }
-        },
-        {
-          "client_id": "1007585015415-au6s7ovlc62ueqt5qag60fjqqkdj4ufa.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.proto3",
-            "certificate_hash": "eea33812ccb31709d00b12ab71f879cdffc23f6b"
-          }
-        },
-        {
-          "client_id": "1007585015415-rejishuea27e8l4lql268tm5eabuudg3.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyAYUerEBQZIB9G4UdbTOG7lDLP0wyOAQCk"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1007585015415-rejishuea27e8l4lql268tm5eabuudg3.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    }
-  ],
+  "client": [],
   "configuration_version": "1"
 }

@@ -17,6 +17,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
 
 public class CustomerLogReg extends AppCompatActivity {
 
@@ -28,6 +30,7 @@ public class CustomerLogReg extends AppCompatActivity {
     private EditText EmailCustomer;
     private EditText PasswordCustomer;
     private FirebaseAuth mAuth;
+    private FirebaseAuth.AuthStateListener firebaseAuthListener;
     private ProgressDialog LoadingBar;
 
     @Override
@@ -35,6 +38,20 @@ public class CustomerLogReg extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_log_reg);
         mAuth= FirebaseAuth.getInstance();
+
+        firebaseAuthListener =new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+                if(user!=null){
+                    Intent intent = new Intent(CustomerLogReg.this, CustomersMapActivity.class);
+                    startActivity(intent);
+                    finish();
+                    return;
+                }
+
+            }
+        };
 
         Customerlogin= (Button) findViewById(R.id.CustomerLoginBtn);
         Customerregister=(Button) findViewById(R.id.CustomerRegBtn);
@@ -64,8 +81,8 @@ public class CustomerLogReg extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                String Email= EmailCustomer.getText().toString();
-                String Password= PasswordCustomer.getText().toString();
+                final String Email= EmailCustomer.getText().toString();
+                final String Password= PasswordCustomer.getText().toString();
 
                 RegisterCustomer(Email, Password);
 
@@ -76,8 +93,8 @@ public class CustomerLogReg extends AppCompatActivity {
             @Override
             public void onClick(View v)
             {
-                String Email= EmailCustomer.getText().toString();
-                String Password= PasswordCustomer.getText().toString();
+                final String Email= EmailCustomer.getText().toString();
+                final String Password= PasswordCustomer.getText().toString();
 
                 LoginCustomer(Email, Password);
 
