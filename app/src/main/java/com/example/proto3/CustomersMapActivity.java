@@ -118,10 +118,10 @@ public class CustomersMapActivity extends FragmentActivity implements OnMapReady
                 GeoFire geoFire = new GeoFire(ref);
                 geoFire.setLocation(userId, new GeoLocation(mLastLocation.getLatitude(), mLastLocation.getLongitude()));
 
-                //pickupLocation = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
-                //pickupMarker = mMap.addMarker(new MarkerOptions().position(pickupLocation).title("Pickup Here"));
+                pickupLocation = new LatLng(mLastLocation.getLatitude(), mLastLocation.getLongitude());
+                pickupMarker = mMap.addMarker(new MarkerOptions().position(pickupLocation).title("Pickup Here").icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_pickup)));
 
-                //mRequest.setText("Getting your Driver....");
+                mRequest.setText("Getting your Driver....");
 
 
             }
@@ -188,6 +188,18 @@ public class CustomersMapActivity extends FragmentActivity implements OnMapReady
                 ActivityCompat.requestPermissions(CustomersMapActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             }
         }
+    }
+
+    protected void onStop()
+    {
+        super.onStop();
+
+        String userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("customerRequest");
+
+        GeoFire geoFire = new GeoFire(ref);
+        geoFire.removeLocation(userId);
+
     }
 
 
